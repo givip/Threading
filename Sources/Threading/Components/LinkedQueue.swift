@@ -40,17 +40,17 @@ public struct LinkedQueue<T> {
 public extension LinkedQueue {
     
     /// First element of the queue if any.
-    public var front: Element? {
+    var front: Element? {
         return root?.element
     }
     
     /// Last element of the queue if any.
-    public var back: Element? {
+    var back: Element? {
         return tail?.element
     }
     
     /// Returns `true` if there are no elements in the queue, `false` otherwise.
-    public var isEmpty: Bool {
+    var isEmpty: Bool {
         return count == 0
     }
     
@@ -66,7 +66,7 @@ public extension LinkedQueue {
     ///     - newElement: The element to add to the queue.
     ///
     /// - complexity: _O(1)_
-    public mutating func enqueue(_ newElement: Element) {
+    mutating func enqueue(_ newElement: Element) {
         if let t = tail {
             t.next = LinkedNode(newElement)
             tail = t.next
@@ -84,7 +84,7 @@ public extension LinkedQueue {
     /// - warning: Do not call this method on an empty queue; method will throw
     ///     a fatal error.
     @discardableResult
-    public mutating func dequeue() -> Element {
+    mutating func dequeue() -> Element {
         if root == nil {
             fatalError("dequeue called on empty queue")
         }
@@ -110,7 +110,7 @@ public extension LinkedQueue {
     ///
     /// - complexity: _O(n * x)_ where n is the size of the queue and x is the
     ///     complexity of `callback`
-    public func forEach
+    func forEach
         (_ callback: @escaping (Element) throws -> Void) rethrows
     {
         var node = root

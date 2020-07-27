@@ -48,7 +48,7 @@ public extension ThreadedArray {
     ///
     /// - parameters:
     ///     - newElement: The element to add to the array.
-    public func append(_ newElement: Element) {
+    func append(_ newElement: Element) {
         async { collection in
             collection.append(newElement)
         }
@@ -62,7 +62,7 @@ public extension ThreadedArray {
     /// `Sequence.Elmement` must be the same as `Self.Element`.
     ///
     /// - complexity: _O(n)_, where n is the length of the resulting array.
-    public func append<S: Sequence>(contentsOf sequence: S)
+    func append<S: Sequence>(contentsOf sequence: S)
         where S.Element == Element
     {
         async { collection in
@@ -81,7 +81,7 @@ public extension ThreadedArray {
     ///                 complete.
     ///
     /// - complexity: _O(n)_, where n is the size of the collection.
-    public func remove(at index: Index, callback: ((Element) -> Void)? = nil) {
+    func remove(at index: Index, callback: ((Element) -> Void)? = nil) {
         async { collection in
             let value = collection.remove(at: index)
             if let function = callback {
@@ -103,7 +103,7 @@ public extension ThreadedArray {
     /// The collection must not be empty.
     ///
     /// - complexity: _O(n)_, where n in the size of the collection.
-    public func removeFirst(callback: ((Element) -> Void)? = nil) {
+    func removeFirst(callback: ((Element) -> Void)? = nil) {
         async { collection in
             let value = collection.removeFirst()
             if let function = callback {
@@ -125,7 +125,7 @@ public extension ThreadedArray {
     /// The collection must not be empty.
     ///
     /// - complexity: _O(1)_
-    public func removeLast(callback: ((Element) -> Void)? = nil) {
+    func removeLast(callback: ((Element) -> Void)? = nil) {
         async { collection in
             let value = collection.removeLast()
             if let function = callback {

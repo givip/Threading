@@ -67,7 +67,7 @@
 		OBJ_13 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		"Threading::Threading::Product" /* Threading.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Threading.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"Threading::ThreadingTests::Product" /* ThreadingTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThreadingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Threading::ThreadingTests::Product" /* ThreadingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = ThreadingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,12 +224,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					"Threading::Threading" = {
+						LastSwiftMigration = 1150;
+					};
+					"Threading::ThreadingTests" = {
+						LastSwiftMigration = 1150;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Threading" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = OBJ_5;
@@ -313,7 +322,7 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = Threading;
 			};
 			name = Debug;
@@ -336,7 +345,7 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = Threading;
 			};
 			name = Release;
@@ -407,7 +416,7 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = ThreadingTests;
 			};
 			name = Debug;
@@ -426,7 +435,7 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = ThreadingTests;
 			};
 			name = Release;

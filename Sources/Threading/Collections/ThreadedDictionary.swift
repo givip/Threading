@@ -74,14 +74,14 @@ public class ThreadedDictionary<Key: Hashable, Value> :
 public extension ThreadedDictionary {
     
     /// A collection containing just the keys of the dictionary.
-    public var keys: Keys {
+    var keys: Keys {
         return sync { collection in
             return collection.keys
         }
     }
     
     /// A collection containing just the values of the dictionary.
-    public var values: Values {
+    var values: Values {
         return sync { collection in
             return collection.values
         }
@@ -93,7 +93,7 @@ public extension ThreadedDictionary {
 
 public extension ThreadedDictionary {
     
-    public func mapValues<T>
+    func mapValues<T>
         (_ transform: @escaping (Value) -> T) -> [Key : T]
     {
         var result = [Key : T]()

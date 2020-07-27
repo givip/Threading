@@ -42,28 +42,28 @@ public class ThreadedQueue<T> : ThreadedObject<LinkedQueue<T>> {
 public extension ThreadedQueue {
     
     /// Number of elements in the queue.
-    public var count: Int {
+    var count: Int {
         return sync { queue in
             return queue.count
         }
     }
     
     /// Returns `true` if there are no elements in the queue, `false` otherwise.
-    public var isEmpty: Bool {
+    var isEmpty: Bool {
         return sync { queue in
             return queue.isEmpty
         }
     }
     
     /// First element of the queue if any.
-    public var front: Element? {
+    var front: Element? {
         return sync { queue in
             return queue.front
         }
     }
     
     /// Last element ofthe queue if any.
-    public var back: Element? {
+    var back: Element? {
         return sync { queue in
             return queue.back
         }
